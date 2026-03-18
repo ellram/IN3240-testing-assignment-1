@@ -1,0 +1,20 @@
+-----------------------------------------------
+Test Case ID: 03
+Test Case Name: 
+Test Description:  
+-----------------------------------------------
+Preconditions:
+- 
+-----------------------------------------------
+Test Data:
+- 
+-----------------------------------------------
+Test Steps:
+    Step 1: Press "Open new account" on side bar menu
+    Expected Result: Application page changes to "Open new account"-page
+-----------------------------------------------
+Status: []
+
+Executed By:  
+Date: 
+Notes:
