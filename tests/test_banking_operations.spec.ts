@@ -39,8 +39,24 @@ test.describe('Testing suite for testing tree different functionallities from we
         await page.waitForTimeout(2000) //bare for testing
 
     });
-
     
+    test('Transfer funds to accounts', async ({ page }) => {
+        await page.getByText('Transfer Funds').click();
+
+        //fyll inn felter
+        await page.locator('#amount').fill('500');
+        await page.locator('#fromAccountId').selectOption('12345');
+        await page.locator('#toAccountId').selectOption('12456');
+        await page.getByRole('button', { name: 'Transfer' }).click();
+
+        //bekreftelse på siden
+        const amount = page.locator('#amountResult');
+        await expect(amount).toHaveText('$500.00');
+        const fromAccount = page.locator('#fromAccountIdResult');
+        await expect(fromAccount).toHaveText('12345');
+        const toAccount = page.locator('#toAccountIdResult');
+        await expect(toAccount).toHaveText('12456');
+    });
 }); 
 
 
