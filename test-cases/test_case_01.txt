@@ -35,8 +35,7 @@ Test Steps:
     Expected Result: Accepts entered message
 
     Step 5: Click "Send to customer care" button
-    Expected Result: 
-    - Confirmation message displays: "Thank you "yourname" A Customer Care Representative will be contacting you."
+    Expected Result: Confirmation message displays: "Thank you "yourname" A Customer Care Representative will be contacting you."
 
 -----------------------------------------------
 Status: [Pass]
