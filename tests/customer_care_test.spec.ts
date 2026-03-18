@@ -5,15 +5,10 @@ test('has link', async ({ page }) => {
   await expect(page).toHaveTitle(/ParaBank/);
 });
 
-/* jeg er ikke helt sikker på om det er best practice å dele de to her opp i to tester
-eller om vi skal bare kjøre de inn i en og samme. Da tenker jeg på testen for a) gå til customer support side,
-og b) fylle inn feltene.
-
 test('go to customer care', async ({ page }) => {
   await page.goto('https://parabank.parasoft.com/parabank/index.htm');
   await page.locator('ul.button li.contact a').click();
 });
-*/
 
 test('fill inn information in fields', async ({ page }) => {
   await page.goto('https://parabank.parasoft.com/parabank/index.htm');
@@ -33,3 +28,10 @@ test('fill inn information in fields', async ({ page }) => {
   await expect(messages).toHaveCount(2);
 });
 
+/* 
+For running tests without view:
+npx playwright test customer_care_test.spec.ts
+
+For running test with view in chrome:
+npx playwright test customer_care_test.spec.ts --headed                                                  
+*/
