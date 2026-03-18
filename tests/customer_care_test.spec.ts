@@ -28,3 +28,11 @@ test('fill inn information in fields', async ({ page }) => {
   await expect(messages).toHaveCount(2);
 });
 
+
+/* 
+For running tests without view:
+npx playwright test customer_care_test.spec.ts
+
+For running test with view in chrome:
+npx playwright test customer_care_test.spec.ts --headed                                                  
+*/
