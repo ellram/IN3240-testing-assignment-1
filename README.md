@@ -1,8 +1,8 @@
 # IN3240-testing
 Fellesmappe for IN3240 for Brenna og Ramstad
 
-**Oppsettsguide for repoet**
-Hvordan bidra til dette repoet 
+Oppsettsguide for repoet: 
+
 	1.	Klone repoet
       Åpne terminalen og kjør:
         git clone https://github.com/ellram/IN3240-testing.git
@@ -34,5 +34,4 @@ Hvordan bidra til dette repoet
       Før du gjør nye endringer, hent siste versjon fra GitHub:
         git pull origin main
 
-__
-Happy testing...
+Happy testing.
