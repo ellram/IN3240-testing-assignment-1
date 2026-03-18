@@ -1,0 +1,83 @@
+Task 1
+---------------------
+1.1: Made us familiar with the site
+1.2: Filled out customer care form
+1.3:
+        -----------------------------------------------
+        Test Case ID: 01
+        Test Case Name: User fills out "customer care" form with name, email, phone and message. 
+        Test Description: Will test if the customer care form will be filled out, and recives a confirmation message
+        -----------------------------------------------
+        Preconditions:
+        - User needs a valid internett connection
+        - All fields must be filled out
+
+        -----------------------------------------------
+        Test Data:
+            - Name: Quorra T. Flynn
+            - Email quorra@example.com
+            - Phone: 12345678
+            - Message: "This is a test message"
+
+        -----------------------------------------------
+        Test Steps:
+            Step 1: Navigate to application URL (https://parabank.parasoft.com/parabank/index.htm)
+            Expected Result: Application homepage loads with general information on front page with login action on sidebar
+
+            Step 2: Click "Email-icon" button
+            Expected Result: Site redirects to page for "customer-care" form. 
+
+            Step 3: Fill out name field
+            Expected Result: Accepts entered name
+
+            Step 4: Fill out email field
+            Expected Result: Accepts entered email
+
+            Step 5: Fill out phone field
+            Expected Result: Accepts entered phone number
+
+            Step 4: Fill out message field with the message to customer service
+            Expected Result: Accepts entered message
+
+            Step 5: Click "Send to customer care" button
+            Expected Result: 
+            - Confirmation message displays: "Thank you "yourname" A Customer Care Representative will be contacting you."
+
+        -----------------------------------------------
+        Status: [Pass]
+
+        Executed By: Elle
+        Date: 18.03.2026
+        Notes: Test passes, when all fields are filled out.  
+
+1.4: Set up playwright
+1.5: 
+        import { test, expect } from '@playwright/test';
+
+        test.describe('Customer Care Tests', () => {
+
+        test('has link', async ({ page }) => {
+            await page.goto('https://parabank.parasoft.com/parabank/index.htm');
+            await expect(page).toHaveTitle(/ParaBank/);
+        });
+
+        test('go to customer care', async ({ page }) => {
+            await page.goto('https://parabank.parasoft.com/parabank/index.htm');
+            await page.locator('ul.button li.contact a').click();
+        });
+
+        test('fill inn information in fields', async ({ page }) => {
+            await page.goto('https://parabank.parasoft.com/parabank/index.htm');
+            await page.locator('ul.button li.contact a').click();
+
+            await page.fill('#name', 'Quorra T. Flynn');
+            await page.fill('#email', 'quorra@example.com');
+            await page.fill('#phone', '12345678');
+            await page.fill('#message', 'This is a test message.');
+
+            await page.click('#contactForm input[type="submit"]');
+            const messages = page.locator('#rightPanel p');
+            await expect(messages).toHaveCount(2); 
+        });
+        });
+
