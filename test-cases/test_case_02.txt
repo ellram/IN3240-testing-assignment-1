@@ -32,8 +32,10 @@ Test Steps:
     Expected Result: Confirmation message displays: "Account Opened! Congratulations, your account is now open."
 
 -----------------------------------------------
-Status: []
+Status: [Pass]
 
-Executed By:  
-Date:  
-Notes:  
+Executed By: Elle
+Date:  18.03.2026
+Notes: The account number I check with needs to be updated because we test with the
+        john-user, meaning that these numbers will be whiped one every now and then
+        so the account numbers will vary.

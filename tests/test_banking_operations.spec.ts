@@ -22,7 +22,7 @@ test.describe('Testing suite for testing tree different functionallities from we
         await expect(page.locator('input[value="Log In"]')).toBeVisible();
     });
 
-    test('test open new account creates new accoun successfully', async ({ page }) => {
+    test('test open new account creates new accoun successfully (test case 02)', async ({ page }) => {
 
         //trykk på riktige felter
         await page.locator('li >> text=Open New Account').click();
@@ -39,6 +39,8 @@ test.describe('Testing suite for testing tree different functionallities from we
         await page.waitForTimeout(2000) //bare for testing
 
     });
+
+    
 }); 
 
 
