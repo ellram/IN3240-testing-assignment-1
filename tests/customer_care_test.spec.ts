@@ -27,3 +27,4 @@ test('fill inn information in fields', async ({ page }) => {
   const messages = page.locator('#rightPanel p');
   await expect(messages).toHaveCount(2);
 });
+
