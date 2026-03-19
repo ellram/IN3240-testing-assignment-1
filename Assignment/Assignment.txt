@@ -89,4 +89,10 @@ _______________________________________________________
     are isolated. Independent tests are easier to maintain, more flexible to run in
     subsets, and integrate better into CI/CD pipelines.
 
-
+2.2 Making tree manual test to test the features
+    Tests
+        - Transfer Funds
+        - Open new account
+        - Pay bills
+    
+    
