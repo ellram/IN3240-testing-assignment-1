@@ -13,8 +13,6 @@ test.describe('Testing suite for testing tree different functionallities from we
         await page.fill('input[name="username"]', 'john');
         await page.fill('input[name="password"]', 'demo');
         await page.locator('input[type="submit"][value="Log In"]').click(); 
-        //await page.waitForTimeout(2000); // venter 2 sekunder så jeg rekker å se hva som skjer
-
     });
 
     test.afterEach(async ({ page }) => {
@@ -37,7 +35,7 @@ test.describe('Testing suite for testing tree different functionallities from we
         const accountLink = page.locator('#newAccountId');
         await expect(accountLink).toHaveCount(1);
 
-        await page.waitForTimeout(2000) //bare for testing
+        await page.waitForTimeout(2000) 
 
     });
     
