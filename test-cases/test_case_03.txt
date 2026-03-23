@@ -1,0 +1,36 @@
+-----------------------------------------------
+Test Case ID: 03
+Test Case Name: Transfer funds to accounts
+Test Description: Test transferring funds to different accounts
+-----------------------------------------------
+Preconditions:
+- Must be logged inn as a user
+- The site must accept the user login
+- Requires a valid internet connection
+-----------------------------------------------
+Test Data:
+- Transfer amount: $500
+- From account: 12345
+- To account: 12456
+-----------------------------------------------
+Test Steps:
+    Step 1: Press "Transfer Funds" on side bar menu
+    Expected Result: Application page changes to "Transfer funds"-page
+
+    Step 2: Fill in amount for transfer in field "Amount:"
+    Expected Result: Field accepts numbers
+
+    Step 3: Choose from account "12345" 
+    Expected Result: Field shows account "12345"
+
+    Step 4: Choose to account "12456"
+    Expected Result: Field shows account "12456"
+
+    Step 5: Click "Transfer"
+    Expected Result: Confirmation message displays: "Transfer Complete!"
+-----------------------------------------------
+Status: []
+
+Executed By: 
+Date: 
+Notes: 

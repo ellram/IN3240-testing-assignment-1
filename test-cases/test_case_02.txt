@@ -1,0 +1,41 @@
+-----------------------------------------------
+Test Case ID: 02
+Test Case Name: Open new account
+Test Description: Test checks if the user "john" can open new savings account 
+-----------------------------------------------
+Preconditions:
+- Must be logged inn as a user
+- The site must accept the user login
+- Requires a valid internet connection
+
+-----------------------------------------------
+Test Data:
+- Username: jon
+- Password: demo
+- Account type: savings
+- Transferre account: 12345
+-----------------------------------------------
+Test Steps:
+    Step 1: Press "Open new account" on side bar menu
+    Expected Result: Application page changes to "Open new account"-page
+
+    Step 2: Click on field for account type
+    Expected Result: The field widens and shows two options for account type
+
+    Step 3: Click on the field "Savings"
+    Expected Result: Field for account type changes from "Checking" to "Savings"
+
+    Step 4: Choose account 12345 as deposit account
+    Expected Result: Field for source account for deposit shows "12345"
+
+    Step 5: Click on button "Open new account" 
+    Expected Result: Confirmation message displays: "Account Opened! Congratulations, your account is now open."
+
+-----------------------------------------------
+Status: [Pass]
+
+Executed By: Elle
+Date:  18.03.2026
+Notes: The account number I check with needs to be updated because we test with the
+        john-user, meaning that these numbers will be whiped one every now and then
+        so the account numbers will vary.

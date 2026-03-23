@@ -1,0 +1,62 @@
+-----------------------------------------------
+Test Case ID: 04
+Test Case Name: Bill pay test
+Test Description: Test paying bills with the "Bill pay" alternative
+-----------------------------------------------
+Preconditions:
+- Must be logged inn as a user
+- The site must accept the user login
+- Requires a valid internet connection
+-----------------------------------------------
+Test Data:
+- Payee name: Quorra
+- Adress: The Grid
+- City: Tron City
+- State: California
+- Zip Code: 8766
+- Phone: 777 22 333
+- Account: 001100
+- Amount $500
+-----------------------------------------------
+Test Steps:
+    Step 1: Navigate to "Add Payee / Transfer" page
+    Expected Result: Application page displays fields for payee and transfer details
+
+    Step 2: Enter payee name in field "Payee Name"
+    Expected Result: Field accepts text input
+
+    Step 3: Enter address in field "Address"
+    Expected Result: Field accepts alphanumeric input
+
+    Step 4: Enter city in field "City"
+    Expected Result: Field accepts text input
+
+    Step 5: Enter state in field "State"
+    Expected Result: Field accepts text input
+
+    Step 6: Enter zip code in field "Zip Code"
+    Expected Result: Field accepts numeric input
+
+    Step 7: Enter phone number in field "Phone #"
+    Expected Result: Field accepts numeric input
+
+    Step 8: Enter account number in field "Account #"
+    Expected Result: Field accepts numeric input
+
+    Step 9: Enter account number in field "Verify Account #"
+    Expected Result: Field accepts numeric input and matches "Account #"
+
+    Step 10: Enter transfer amount in field "Amount: $"
+    Expected Result: Field accepts numeric input
+
+    Step 11: Select account in field "From account #"
+    Expected Result: Selected account is displayed in the field
+
+    Step 12: Click "Submit" / "Transfer"
+    Expected Result: Confirmation message displays (e.g. "Transfer Complete!" or payee successfully added)
+-----------------------------------------------
+Status: []
+
+Executed By: 
+Date: 
+Notes: 
