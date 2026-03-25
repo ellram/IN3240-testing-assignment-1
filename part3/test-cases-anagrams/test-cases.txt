@@ -1,0 +1,13 @@
+Test cases
+---------------
+
+
+case 01: "a" -> ["a"]
+case 02: "ab" -> ["ab", "ba"]
+case 03: "abc" -> ["abc", "acb", "bac", "bca", "cab", "cba"]
+
+Final test case: 
+Case 04: "brio" -> [biro bior brio broi boir bori
+                    ibro ibor irbo irob iobr iorb
+                    rbio rboi ribo riob roib robi
+                    obir obri oibr oirb orbi orib]
