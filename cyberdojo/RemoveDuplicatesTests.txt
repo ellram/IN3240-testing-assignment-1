@@ -1,0 +1,73 @@
+TEST 1: return an empty list when given an empty list
+
+public class RemoveDuplicatesTest {
+    @Test
+    void emptyListReturnsEmptyList() {
+        assertEquals(List.of(), RemoveDuplicates.remove(List.of()));
+    }
+}
+
+// Initial test failed
+public class RemoveDuplicates {
+    public static List<Integer> remove(List<Integer> nlist) {
+        return null;
+    }
+}
+
+// test PASSED after changes to remove()
+
+public class RemoveDuplicates {
+    public static List<Integer> remove(List<Integer> nlist) {
+        return List.of();
+    }
+}
+
+
+TEST 2: Function returns the same list if there are no duplicates
+
+@Test
+    void listWithoutDuplicatesReturnsSameList() {
+        assertEquals(List.of(1, 2),
+            RemoveDuplicates.remove(List.of(1, 2)));
+    }
+
+// initial test, failed
+public class RemoveDuplicates {
+    public static List<Integer> remove(List<Integer> nlist) {
+        return List.of();
+    }
+}
+
+// test PASSED after changes to remove()
+
+public class RemoveDuplicates {
+    public static List<Integer> remove(List<Integer> nlist) {
+        return nlist;
+    }
+}
+
+
+TEST 3: The function removes duplicate elements from the list and preserves order of elements.
+
+    @Test
+    void removesDuplicatesTest() {
+        assertEquals(List.of(1, 2),
+                     RemoveDuplicates.remove(List.of(1, 1, 2, 2)));
+    }
+
+// failed
+
+public class RemoveDuplicates {
+    public static List<Integer> remove(List<Integer> nlist) {
+        return nlist;
+    }
+}
+
+
+// test PASSED after changes to remove()
+
+public class RemoveDuplicates {
+    public static List<Integer> remove(List<Integer> nlist) {
+        return new ArrayList<>(new LinkedHashSet<>(nlist));
+    }
+}
