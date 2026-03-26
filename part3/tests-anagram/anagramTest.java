@@ -25,7 +25,7 @@ public class anagramTest {
         assertTrue(result.contains("abc"));
         assertTrue(result.contains("cba"));
     }
-    
+       
     @Test
     void fourLetters() { 
         List<String> result = Anagrams.anagrams("brio");
