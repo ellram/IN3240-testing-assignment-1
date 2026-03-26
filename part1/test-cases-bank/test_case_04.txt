@@ -55,8 +55,8 @@ Test Steps:
     Step 12: Click "Submit" / "Transfer"
     Expected Result: Confirmation message displays (e.g. "Transfer Complete!" or payee successfully added)
 -----------------------------------------------
-Status: []
+Status: [Pass]
 
-Executed By: 
-Date: 
-Notes: 
+Executed By: Elle
+Date: 26.03.2026
+Notes: Pass, choose random account here as well. 
