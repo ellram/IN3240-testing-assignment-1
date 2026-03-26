@@ -29,8 +29,8 @@ Test Steps:
     Step 5: Click "Transfer"
     Expected Result: Confirmation message displays: "Transfer Complete!"
 -----------------------------------------------
-Status: []
+Status: [Pass]
 
-Executed By: 
-Date: 
-Notes: 
+Executed By: Elle
+Date: 26/3
+Notes: Runs, only note is that it chooses a random account, and not as the test steps indicates here.
