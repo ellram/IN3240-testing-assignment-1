@@ -28,7 +28,7 @@ test.describe('Testing suite for testing tree different functionallities from we
     test('test open new account creates new accoun successfully', async ({ page }) => {
         await page.locator('li >> text=Open New Account').click();
         await page.locator('select#type').selectOption({ label: 'SAVINGS' });
-        await page.locator('select#fromAccountId').selectOption({ label: '13344' }); //denne kontostringen må byttes ut basert på hvilke kontoer som finnes i databasen på tidspunktet av testingen
+        await page.locator('select#fromAccountId').selectOption({ label: '12345' }); //denne kontostringen må byttes ut basert på hvilke kontoer som finnes i databasen på tidspunktet av testingen
         await page.locator('input[type="button"][value="Open New Account"]').click(); 
 
         const message = page.locator('#openAccountResult p', { hasText: 'Congratulations' });
@@ -36,22 +36,24 @@ test.describe('Testing suite for testing tree different functionallities from we
         const accountLink = page.locator('#newAccountId');
         await expect(accountLink).toHaveCount(1);
         await page.waitForTimeout(2000) 
+        await page.pause();
     });
     
     //test case 03 ==> Fund transfer
     test('Transfer funds to accounts', async ({ page }) => {
         await page.getByText('Transfer Funds').click();
         await page.locator('#amount').fill('500');
-        await page.locator('#fromAccountId').selectOption('13344');
-        await page.locator('#toAccountId').selectOption('14010');
+        await page.locator('#fromAccountId').selectOption('12345');
+        await page.locator('#toAccountId').selectOption('12456');
         await page.getByRole('button', { name: 'Transfer' }).click();
 
         const amount = page.locator('#amountResult');
         await expect(amount).toHaveText('$500.00');
         const fromAccount = page.locator('#fromAccountIdResult');
-        await expect(fromAccount).toHaveText('13344');
+        await expect(fromAccount).toHaveText('12345');
         const toAccount = page.locator('#toAccountIdResult');
-        await expect(toAccount).toHaveText('14010');
+        await expect(toAccount).toHaveText('12456');
+        await page.pause();
     });
 
     //test case 04 ==> Bill pay
@@ -66,8 +68,9 @@ test.describe('Testing suite for testing tree different functionallities from we
         await page.locator('input[name="payee.accountNumber"]').fill('001100');
         await page.locator('input[name="verifyAccount"]').fill('001100');
         await page.locator('input[name="amount"]').fill('500');
-        await page.locator('select[name="fromAccountId"]').selectOption({ label: '13344' });    
+        await page.locator('select[name="fromAccountId"]').selectOption({ label: '12456' });    
         await page.getByRole('button', { name: 'Send Payment' }).click();
         await expect(page.locator('#billpayResult')).toBeVisible();
+        await page.pause();
     })
 });

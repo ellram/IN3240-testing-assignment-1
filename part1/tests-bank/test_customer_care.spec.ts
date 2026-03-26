@@ -5,11 +5,13 @@ test.describe('Customer Care Tests', () => {
   test('has link', async ({ page }) => {
     await page.goto('https://parabank.parasoft.com/parabank/index.htm');
     await expect(page).toHaveTitle(/ParaBank/);
+    await page.pause();
   });
 
   test('go to customer care', async ({ page }) => {
     await page.goto('https://parabank.parasoft.com/parabank/index.htm');
     await page.locator('ul.button li.contact a').click();
+    await page.pause();
   });
 
   test('fill inn information in fields', async ({ page }) => {
@@ -24,5 +26,6 @@ test.describe('Customer Care Tests', () => {
     await page.click('#contactForm input[type="submit"]');
     const messages = page.locator('#rightPanel p');
     await expect(messages).toHaveCount(2); 
+    await page.pause();
   });
 });

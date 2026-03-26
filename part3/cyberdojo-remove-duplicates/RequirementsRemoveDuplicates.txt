@@ -1,0 +1,4 @@
+Requirements for Remove Duplicates program:
+    1. The function returns an empty list when given an empty list
+    2. The function returns the same list if there are no duplicates
+    3. The function removes duplicate elements from the list and preserves order of elements.
