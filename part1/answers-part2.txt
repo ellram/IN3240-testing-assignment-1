@@ -1,0 +1,10 @@
+Because this assignment included a task that was a textual description, I am attaching a .txt file here
+to answer the question:
+
+Task 2
+_______________________________________________________
+2.1 Ensuring automated tests are independent makes them reliable and reproducible, 
+    since each test’s result doesn’t depend on others. It also allows tests to run 
+    in parallel, speeds up execution, and makes debugging easier because failures 
+    are isolated. Independent tests are easier to maintain, more flexible to run in
+    subsets, and integrate better into CI/CD pipelines.
