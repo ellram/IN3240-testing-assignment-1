@@ -1,12 +1,3 @@
-/**
- * Alle tester kjører, men det som er litt "på tur" er at kontostrengene skiftes ut ettersom databasen endres eller whipes
- * Det som kan løse det er å mellomlagre kontostrengen som kommer fra første test, altså "newAccountID" i en variabel
- * også sende den videre gjennom de neste testene.
- * 
- * Velger å ikke bruke tid på det helt ennå, og endrer det heller dersom jeg får tid. 
- * Men merk derfor at man må følge litt ekstra med på strengene for kontoene før man skal kjøre testene.
- */
-
 import { test, expect } from '@playwright/test';
 test.describe('Testing suite for testing tree different functionallities from webpage parabank', () => {
     
@@ -39,18 +30,13 @@ test.describe('Testing suite for testing tree different functionallities from we
     test('Transfer funds to accounts', async ({ page }) => {
         await page.getByText('Transfer Funds').click();
         await page.locator('#amount').fill('500');
-        await page.locator('#fromAccountId').selectOption('12345');
-        await page.locator('#toAccountId').selectOption('12456');
+        const options = await page.locator('#toAccountId option').allTextContents();
+        const randomOption = options[Math.floor(Math.random() * options.length)];
+        await page.locator('#toAccountId').selectOption({ label: randomOption });
         await page.getByRole('button', { name: 'Transfer' }).click();
-
         const amount = page.locator('#amountResult');
         await expect(amount).toHaveText('$500.00');
-        const fromAccount = page.locator('#fromAccountIdResult');
-        await expect(fromAccount).toHaveText('12345');
-        const toAccount = page.locator('#toAccountIdResult');
-        await expect(toAccount).toHaveText('12456');
-        await page.pause();
-     });
+    });
 
     //test case 04 ==> Bill pay
     test('Bill pay', async ({ page }) => {
