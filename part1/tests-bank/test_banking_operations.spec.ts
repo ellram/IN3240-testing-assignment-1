@@ -28,20 +28,13 @@ test.describe('Testing suite for testing tree different functionallities from we
     test('test open new account creates new accoun successfully', async ({ page }) => {
         await page.locator('li >> text=Open New Account').click();
         await page.locator('select#type').selectOption({ label: 'SAVINGS' });
-        const defaultOption = await page.locator('select#fromAccountId option[selected]').getAttribute('value');
-        await page.locator('select#fromAccountId').selectOption(defaultOption);
-
-        //await page.locator('select#fromAccountId').selectOption({ label: '12345' }); //denne kontostringen må byttes ut basert på hvilke kontoer som finnes i databasen på tidspunktet av testingen
         await page.locator('input[type="button"][value="Open New Account"]').click(); 
-
         const message = page.locator('#openAccountResult p', { hasText: 'Congratulations' });
         await expect(message).toHaveCount(1);    
         const accountLink = page.locator('#newAccountId');
         await expect(accountLink).toHaveCount(1);
-        await page.waitForTimeout(2000) 
-        await page.pause();
-    });
-    
+      });
+
     //test case 03 ==> Fund transfer
     test('Transfer funds to accounts', async ({ page }) => {
         await page.getByText('Transfer Funds').click();
@@ -57,7 +50,7 @@ test.describe('Testing suite for testing tree different functionallities from we
         const toAccount = page.locator('#toAccountIdResult');
         await expect(toAccount).toHaveText('12456');
         await page.pause();
-    });
+     });
 
     //test case 04 ==> Bill pay
     test('Bill pay', async ({ page }) => {
@@ -71,9 +64,7 @@ test.describe('Testing suite for testing tree different functionallities from we
         await page.locator('input[name="payee.accountNumber"]').fill('001100');
         await page.locator('input[name="verifyAccount"]').fill('001100');
         await page.locator('input[name="amount"]').fill('500');
-        await page.locator('select[name="fromAccountId"]').selectOption({ label: '12456' });    
         await page.getByRole('button', { name: 'Send Payment' }).click();
         await expect(page.locator('#billpayResult')).toBeVisible();
-        await page.pause();
-    })
+     })
 });
