@@ -28,7 +28,10 @@ test.describe('Testing suite for testing tree different functionallities from we
     test('test open new account creates new accoun successfully', async ({ page }) => {
         await page.locator('li >> text=Open New Account').click();
         await page.locator('select#type').selectOption({ label: 'SAVINGS' });
-        await page.locator('select#fromAccountId').selectOption({ label: '12345' }); //denne kontostringen må byttes ut basert på hvilke kontoer som finnes i databasen på tidspunktet av testingen
+        const defaultOption = await page.locator('select#fromAccountId option[selected]').getAttribute('value');
+        await page.locator('select#fromAccountId').selectOption(defaultOption);
+
+        //await page.locator('select#fromAccountId').selectOption({ label: '12345' }); //denne kontostringen må byttes ut basert på hvilke kontoer som finnes i databasen på tidspunktet av testingen
         await page.locator('input[type="button"][value="Open New Account"]').click(); 
 
         const message = page.locator('#openAccountResult p', { hasText: 'Congratulations' });
