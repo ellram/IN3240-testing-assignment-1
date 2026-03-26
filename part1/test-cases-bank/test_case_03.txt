@@ -32,5 +32,5 @@ Test Steps:
 Status: [Pass]
 
 Executed By: Elle
-Date: 26/3
+Date: 26.02.2026
 Notes: Runs, only note is that it chooses a random account, and not as the test steps indicates here.
